@@ -2,17 +2,17 @@
 TARGET = $(notdir $(CURDIR))
 
 # The teensy version to use, 30, 31, 35, 36, or LC
-TEENSY = 30
+TEENSY = 32 # Not used anymore, just for the record
 
 # Set to 24000000, 48000000, or 96000000 to set CPU core speed
-TEENSY_CORE_SPEED = 48000000
+TEENSY_CORE_SPEED = 72000000
 
 # Some libraries will require this to be defined
 # If you define this, you will break the default main.cpp
 #ARDUINO = 10600
 
 # configurable options
-OPTIONS = -DUSB_SERIAL -DLAYOUT_US_ENGLISH
+OPTIONS = -DUSB_KEYBOARDONLY -DLAYOUT_US_ENGLISH
 
 # directory to build in
 BUILDDIR = $(abspath $(CURDIR)/build)
@@ -49,7 +49,7 @@ COMPILERPATH = $(TOOLSPATH)/arm/bin
 #************************************************************************
 
 # CPPFLAGS = compiler options for C and C++
-CPPFLAGS = -Wall -g -Os -mthumb -ffunction-sections -fdata-sections -nostdlib -MMD $(OPTIONS) -DTEENSYDUINO=124 -DF_CPU=$(TEENSY_CORE_SPEED) -Isrc -I$(COREPATH)
+CPPFLAGS = -Wall -g -Os -mthumb -ffunction-sections -fdata-sections -nostdlib -MMD $(OPTIONS) -DTEENSYDUINO=146 -DF_CPU=$(TEENSY_CORE_SPEED) -Isrc -I$(COREPATH)
 
 # compiler options for C++ only
 CXXFLAGS = -std=gnu++0x -felide-constructors -fno-exceptions -fno-rtti
@@ -63,33 +63,9 @@ LDFLAGS = -Os -Wl,--gc-sections -mthumb
 # additional libraries to link
 LIBS = -lm
 
-# compiler options specific to teensy version
-ifeq ($(TEENSY), 30)
-    CPPFLAGS += -D__MK20DX128__ -mcpu=cortex-m4
-    LDSCRIPT = $(COREPATH)/mk20dx128.ld
-    LDFLAGS += -mcpu=cortex-m4 -T$(LDSCRIPT)
-else ifeq ($(TEENSY), 31)
-    CPPFLAGS += -D__MK20DX256__ -mcpu=cortex-m4
-    LDSCRIPT = $(COREPATH)/mk20dx256.ld
-    LDFLAGS += -mcpu=cortex-m4 -T$(LDSCRIPT)
-else ifeq ($(TEENSY), LC)
-    CPPFLAGS += -D__MKL26Z64__ -mcpu=cortex-m0plus
-    LDSCRIPT = $(COREPATH)/mkl26z64.ld
-    LDFLAGS += -mcpu=cortex-m0plus -T$(LDSCRIPT)
-    LIBS += -larm_cortexM0l_math
-else ifeq ($(TEENSY), 35)
-    CPPFLAGS += -D__MK64FX512__ -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16
-    LDSCRIPT = $(COREPATH)/mk64fx512.ld
-    LDFLAGS += -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T$(LDSCRIPT)
-    LIBS += -larm_cortexM4lf_math
-else ifeq ($(TEENSY), 36)
-    CPPFLAGS += -D__MK66FX1M0__ -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16
-    LDSCRIPT = $(COREPATH)/mk66fx1m0.ld
-    LDFLAGS += -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T$(LDSCRIPT)
-    LIBS += -larm_cortexM4lf_math
-else
-    $(error Invalid setting for TEENSY)
-endif
+CPPFLAGS += -D__MK20DX256__ -mcpu=cortex-m4
+LDSCRIPT = $(COREPATH)/mk20dx256.ld
+LDFLAGS += -mcpu=cortex-m4 -T$(LDSCRIPT)
 
 # set arduino define if given
 ifdef ARDUINO
