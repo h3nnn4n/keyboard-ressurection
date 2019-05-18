@@ -1,7 +1,7 @@
 #include "keylayouts.h"
 
-const int column_pins[] = {10, 11, 12};
-const int row_pins[] = {14, 15, 16};
+const int row_pins[] = {10, 11, 12};
+const int column_pins[] = {14, 15, 16};
 const int n_columns = 3;
 const int n_rows = 3;
 

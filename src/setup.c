@@ -15,6 +15,6 @@ void setup()
     // Row scan pins
     for (size_t i = 0; i < n_rows; i++)
     {
-        pinMode(row_pins[i], INPUT_PULLUP);
+        pinMode(row_pins[i], INPUT_PULLDOWN);
     }
 }

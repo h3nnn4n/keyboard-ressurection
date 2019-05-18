@@ -19,7 +19,7 @@ void loop()
 
         for (size_t j = 0; j < n_rows; j++)
         {
-            int key_status = !digitalRead(row_pins[j]);
+            int key_status = digitalRead(row_pins[j]);
             int key_index = i * n_columns + j;
 
             if (key_status)
