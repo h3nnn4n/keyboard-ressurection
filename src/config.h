@@ -1,5 +1,7 @@
-#ifndef __TYPES_H
-#define __TYPES_H
+#ifndef __CONFIG_H
+#define __CONFIG_H
+
+#include "keylayouts.h"
 
 const int column_pins[] = {10, 11, 12};
 const int row_pins[] = {14, 15, 16};
