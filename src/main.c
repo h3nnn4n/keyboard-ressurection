@@ -1,5 +1,4 @@
 #include "WProgram.h"
-
 #include "config.h"
 
 void reset_keys();
@@ -8,7 +7,7 @@ int usb_keyboard_send();
 
 extern uint8_t keyboard_keys[6];
 
-extern "C" int main(void)
+int main(void)
 {
     setup();
 
