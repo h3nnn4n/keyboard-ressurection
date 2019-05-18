@@ -1,13 +1,13 @@
-#ifndef __CONFIG_H
+#if !defined(__CONFIG_H)
 #define __CONFIG_H
 
 #include "keylayouts.h"
 
-const int column_pins[] = {10, 11, 12};
-const int row_pins[] = {14, 15, 16};
-const int n_columns = 3;
-const int n_rows = 3;
+extern const int column_pins[];
+extern const int row_pins[];
+extern const int n_columns;
+extern const int n_rows;
 
-const int key_map[] = {KEY_A, KEY_B, KEY_C, KEY_D, KEY_E, KEY_F, KEY_G, KEY_H, KEY_I};
+extern const int key_map[];
 
-#endif
+#endif // __CONFIG_H
