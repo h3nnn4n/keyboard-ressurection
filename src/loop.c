@@ -1,12 +1,7 @@
 #include "WProgram.h"
 #include "config.h"
 #include "setup.h"
-
-void reset_keys();
-void reset_keyboard();
-int usb_keyboard_send();
-
-extern uint8_t keyboard_keys[6];
+#include "loop.h"
 
 void loop()
 {
@@ -24,7 +19,7 @@ void loop()
 
             if (key_status)
             {
-                keyboard_keys[active_keys] = key_map[key_index];
+                keyboard_keys[active_keys] = KEY_A; // key_map[key_index];
                 active_keys++;
             }
         }
@@ -42,6 +37,8 @@ void loop()
     }
 
     usb_keyboard_send();
+
+    delay(10);
 }
 
 void reset_keys()

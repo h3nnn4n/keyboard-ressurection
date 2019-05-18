@@ -1,5 +1,6 @@
 #include "WProgram.h"
 #include "config.h"
+#include "loop.h"
 
 void setup()
 {
@@ -17,4 +18,6 @@ void setup()
     {
         pinMode(row_pins[i], INPUT_PULLDOWN);
     }
+
+    reset_keys();
 }
