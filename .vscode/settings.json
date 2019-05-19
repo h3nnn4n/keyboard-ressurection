@@ -2,6 +2,9 @@
     "editor.formatOnSave": true,
     "files.associations": {
         "wprogram.h": "c",
-        "loop.h": "c"
+        "loop.h": "c",
+        "serial_wrapper.h": "c",
+        "usb_serial.h": "c",
+        "core_pins.h": "c"
     }
 }

@@ -1,4 +1,7 @@
+#include "usb_serial.h"
 #include "WProgram.h"
+#include "stdio.h"
+
 #include "config.h"
 #include "setup.h"
 #include "loop.h"
@@ -7,6 +10,7 @@ void loop()
 {
     reset_keys();
     int active_keys = 0;
+    char buffer[256];
 
     for (size_t i = 0; i < n_columns; i++)
     {
@@ -19,8 +23,12 @@ void loop()
 
             if (key_status)
             {
-                keyboard_keys[active_keys] = KEY_A; // key_map[key_index];
+                keyboard_keys[active_keys] = key_map[0];
                 active_keys++;
+
+                sprintf(buffer, "%4d %4d %4d\n", i, j, key_index);
+                int size = 15;
+                usb_serial_write(buffer, size);
             }
         }
 
