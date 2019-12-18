@@ -34,4 +34,4 @@ const int column_pins[] = {
 const int n_rows = 6;
 const int n_columns = 18;
 
-const int key_map[] = {KEY_A, KEY_B, KEY_C, KEY_D, KEY_E, KEY_F, KEY_G, KEY_H, KEY_I};
+const int key_map[] = {KEY_ESC, KEY_A, KEY_S, KEY_D, KEY_F, KEY_G, KEY_H, KEY_J, KEY_K, KEY_L, KEY_A, KEY_A, KEY_A, KEY_A, KEY_A, KEY_A, KEY_A, KEY_A, KEY_A, KEY_A};

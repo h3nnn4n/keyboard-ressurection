@@ -23,7 +23,7 @@ void loop()
 
             if (key_status)
             {
-                keyboard_keys[active_keys] = key_map[0];
+                keyboard_keys[active_keys] = key_map[i];
                 active_keys++;
 
                 sprintf(buffer, "%4d %4d %4d\n", i, j, key_index);
