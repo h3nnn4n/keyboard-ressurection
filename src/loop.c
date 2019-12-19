@@ -44,9 +44,9 @@ void loop() {
     }
 
     if (active_keys > 0) {
-        digitalWriteFast(13, HIGH);
+        digitalWriteFast(LED_PIN, HIGH);
     } else {
-        digitalWriteFast(13, LOW);
+        digitalWriteFast(LED_PIN, LOW);
     }
 
     usb_keyboard_send();

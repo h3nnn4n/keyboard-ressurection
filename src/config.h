@@ -36,6 +36,8 @@
 
 #define POOLING_DELAY 10
 
+#define LED_PIN 13
+
 extern const int column_pins[];
 extern const int row_pins[];
 extern const int n_columns;

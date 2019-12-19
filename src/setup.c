@@ -4,7 +4,7 @@
 
 void setup() {
     // Used for the LED. Just a simple heartbeat
-    pinMode(13, OUTPUT);
+    pinMode(LED_PIN, OUTPUT);
 
     // Column scan pins
     for (size_t i = 0; i < n_columns; i++) {
