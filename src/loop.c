@@ -31,8 +31,12 @@ void loop()
                   continue;
                 }
 
-                keyboard_keys[active_keys] = new_key;
-                active_keys++;
+                if (key_is_modifier(new_key)) {
+                  keyboard_modifier_keys |= new_key;
+                } else {
+                  keyboard_keys[active_keys] = new_key;
+                  active_keys++;
+                }
 
                 sprintf(buffer, "i: %4d j: %4d j2: %4d\r", i, j, n_rows - j - 1);
                 int size = strlen(buffer);
@@ -57,10 +61,24 @@ void loop()
     delay(POOLING_DELAY);
 }
 
+int key_is_modifier(int key)
+{
+    for (size_t i = 0; i < 6; i++)
+    {
+        if (key_modifiers[i] == key) {
+            return 1;
+        }
+    }
+
+    return 0;
+}
+
 void reset_keys()
 {
     for (size_t i = 0; i < 6; i++)
     {
         keyboard_keys[i] = 0;
     }
+
+    keyboard_modifier_keys = 0;
 }

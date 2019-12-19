@@ -40,7 +40,7 @@ extern const int column_pins[];
 extern const int row_pins[];
 extern const int n_columns;
 extern const int n_rows;
-
+extern const int key_modifiers[];
 extern const int key_map[N_ROWS][N_COLUMNS];
 
 #endif // __CONFIG_H
