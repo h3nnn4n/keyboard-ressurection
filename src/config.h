@@ -32,7 +32,7 @@
 #define N_ROWS 6
 #define N_COLUMNS 18
 
-#define KEY_NOP -1
+#define NOP -1
 
 #define POOLING_DELAY 10
 

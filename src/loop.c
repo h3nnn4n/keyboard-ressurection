@@ -24,8 +24,8 @@ void loop()
             {
                 const int new_key = key_map[n_rows - j - 1][i];
 
-                if (new_key == KEY_NOP) {
-                  sprintf(buffer, "i: %4d j: %4d j2: %4d  -- KEY_NOP\r", i, j, n_rows - j - 1);
+                if (new_key == NOP) {
+                  sprintf(buffer, "i: %4d j: %4d j2: %4d  -- NOP\r", i, j, n_rows - j - 1);
                   int size = strlen(buffer);
                   usb_serial_write(buffer, size);
                   continue;
