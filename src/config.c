@@ -2,18 +2,20 @@
 
 #include "config.h"
 
-const int row_pins[] = {ROW_1, ROW_2, ROW_3, ROW_4, ROW_5, ROW_6};
-const int column_pins[] = {
-    COLUMN_1, COLUMN_2, COLUMN_3, COLUMN_4, COLUMN_5, COLUMN_6, COLUMN_7,
-    COLUMN_8, COLUMN_9, COLUMN_10, COLUMN_11, COLUMN_12, COLUMN_13,
-    COLUMN_14, COLUMN_15, COLUMN_16, COLUMN_17, COLUMN_18};
 const int n_rows = N_ROWS;
 const int n_columns = N_COLUMNS;
 
+const int row_pins[N_ROWS] = { ROW_1, ROW_2, ROW_3, ROW_4, ROW_5, ROW_6 };
+const int column_pins[N_COLUMNS] = {
+    COLUMN_1  , COLUMN_2  , COLUMN_3  , COLUMN_4  , COLUMN_5  , COLUMN_6  ,
+    COLUMN_7  , COLUMN_8  , COLUMN_9  , COLUMN_10 , COLUMN_11 , COLUMN_12 ,
+    COLUMN_13 , COLUMN_14 , COLUMN_15 , COLUMN_16 , COLUMN_17 , COLUMN_18 ,
+};
+
 const int key_modifiers[] = {
-  KEY_LEFT_SHIFT, KEY_RIGHT_SHIFT,
-  KEY_LEFT_CTRL, KEY_RIGHT_CTRL,
-  KEY_LEFT_ALT, KEY_RIGHT_ALT,
+  KEY_LEFT_SHIFT , KEY_RIGHT_SHIFT ,
+  KEY_LEFT_CTRL  , KEY_RIGHT_CTRL  ,
+  KEY_LEFT_ALT   , KEY_RIGHT_ALT   ,
 };
 
 const int key_map[N_ROWS][N_COLUMNS] = {

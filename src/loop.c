@@ -6,22 +6,18 @@
 #include "setup.h"
 #include "loop.h"
 
-void loop()
-{
+void loop() {
     reset_keys();
     int active_keys = 0;
     char buffer[256];
 
-    for (size_t i = 0; i < n_columns; i++)
-    {
+    for (size_t i = 0; i < n_columns; i++) {
         digitalWrite(column_pins[i], HIGH);
 
-        for (size_t j = 0; j < n_rows; j++)
-        {
+        for (size_t j = 0; j < n_rows; j++) {
             int key_status = digitalRead(row_pins[j]);
 
-            if (key_status)
-            {
+            if (key_status) {
                 const int new_key = key_map[n_rows - j - 1][i];
 
                 if (new_key == NOP) {
@@ -47,12 +43,9 @@ void loop()
         digitalWrite(column_pins[i], LOW);
     }
 
-    if (active_keys > 0)
-    {
+    if (active_keys > 0) {
         digitalWriteFast(13, HIGH);
-    }
-    else
-    {
+    } else {
         digitalWriteFast(13, LOW);
     }
 
@@ -61,10 +54,8 @@ void loop()
     delay(POOLING_DELAY);
 }
 
-int key_is_modifier(int key)
-{
-    for (size_t i = 0; i < 6; i++)
-    {
+int key_is_modifier(int key) {
+    for (size_t i = 0; i < 6; i++) {
         if (key_modifiers[i] == key) {
             return 1;
         }
@@ -73,10 +64,8 @@ int key_is_modifier(int key)
     return 0;
 }
 
-void reset_keys()
-{
-    for (size_t i = 0; i < 6; i++)
-    {
+void reset_keys() {
+    for (size_t i = 0; i < 6; i++) {
         keyboard_keys[i] = 0;
     }
 

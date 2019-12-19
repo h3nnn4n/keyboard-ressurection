@@ -1,12 +1,10 @@
 #include "setup.h"
 #include "loop.h"
 
-int main(void)
-{
+int main(void) {
     setup();
 
-    while (1)
-    {
+    while (1) {
         loop();
     }
 }
