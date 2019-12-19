@@ -54,7 +54,7 @@ void loop()
 
     usb_keyboard_send();
 
-    delay(10);
+    delay(POOLING_DELAY);
 }
 
 void reset_keys()

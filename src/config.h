@@ -34,6 +34,8 @@
 
 #define KEY_NOP -1
 
+#define POOLING_DELAY 10
+
 extern const int column_pins[];
 extern const int row_pins[];
 extern const int n_columns;
