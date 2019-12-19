@@ -7,9 +7,27 @@ My beloved mechanical keyboard died a tragic wet death some years ago. Now I am
 resurrecting it. This repo may hold some stuff about how I made it. The firmware
 will be developed here.
 
+The pictures below show the new inside of the keyboard, which I hand wired full free style. It also shows the outside, in case someone is curious.
+
+<p float="left" align="middle">
+  <img src="/images/keyboard_inside.jpg" width="200" />
+  <img src="/images/keyboard_inside_board_closeup.jpg" width="200" />
+  <img src="/images/keyboard_inside_tilted.jpg" width="200" />
+  <img src="/images/keyboard_outside.jpg" width="200" />
+</p>
+
 Why?
 -------
 Mechanical Keyboards are expensive and I like fixing stuff.
+
+TODO
+-------
+- [x] Be able to commit from the keyboard
+- [ ] Support all modifiers
+- [ ] Support numbers
+- [ ] Support DVORAK
+- [ ] Add F1 ~ F12
+
 
 LICENSE
 -------
