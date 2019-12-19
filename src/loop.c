@@ -19,15 +19,23 @@ void loop()
         for (size_t j = 0; j < n_rows; j++)
         {
             int key_status = digitalRead(row_pins[j]);
-            int key_index = i * n_columns + j;
 
             if (key_status)
             {
-                keyboard_keys[active_keys] = key_map[i];
+                const int new_key = key_map[n_rows - j - 1][i];
+
+                if (new_key == KEY_NOP) {
+                  sprintf(buffer, "i: %4d j: %4d j2: %4d  -- KEY_NOP\r", i, j, n_rows - j - 1);
+                  int size = strlen(buffer);
+                  usb_serial_write(buffer, size);
+                  continue;
+                }
+
+                keyboard_keys[active_keys] = new_key;
                 active_keys++;
 
-                sprintf(buffer, "%4d %4d %4d\n", i, j, key_index);
-                int size = 15;
+                sprintf(buffer, "i: %4d j: %4d j2: %4d\r", i, j, n_rows - j - 1);
+                int size = strlen(buffer);
                 usb_serial_write(buffer, size);
             }
         }
