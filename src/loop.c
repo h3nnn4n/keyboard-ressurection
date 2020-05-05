@@ -16,6 +16,7 @@ void loop() {
 
     for (size_t i = 0; i < n_columns; i++) {
         digitalWrite(column_pins[i], HIGH);
+        delay(COLUMN_POOLING_DELAY);
 
         for (size_t j = 0; j < n_rows; j++) {
             int key_status = digitalRead(row_pins[j]);
@@ -48,10 +49,6 @@ void loop() {
         }
 
         digitalWrite(column_pins[i], LOW);
-
-        if (i + 1 < n_columns) {
-          delay(COLUMN_POOLING_DELAY);
-        }
     }
 
     if (active_keys > 0) {
