@@ -9,7 +9,10 @@
 void loop() {
     reset_keys();
     int active_keys = 0;
+
+#ifdef __SERIAL_DEBUG
     char buffer[256];
+#endif
 
     for (size_t i = 0; i < n_columns; i++) {
         digitalWrite(column_pins[i], HIGH);
@@ -21,9 +24,11 @@ void loop() {
                 const int new_key = key_map[n_rows - j - 1][i];
 
                 if (new_key == NOP) {
-                  sprintf(buffer, "i: %4d j: %4d j2: %4d  -- NOP\r", i, j, n_rows - j - 1);
+#ifdef __SERIAL_DEBUG
+                  sprintf(buffer, "i: %4d j: %4d j2: %4d  -- NOP\n\r", i, j, n_rows - j - 1);
                   int size = strlen(buffer);
                   usb_serial_write(buffer, size);
+#endif
                   continue;
                 }
 
@@ -34,9 +39,11 @@ void loop() {
                   active_keys++;
                 }
 
-                sprintf(buffer, "i: %4d j: %4d j2: %4d\r", i, j, n_rows - j - 1);
+#ifdef __SERIAL_DEBUG
+                sprintf(buffer, "i: %4d j: %4d j2: %4d\n\r", i, j, n_rows - j - 1);
                 int size = strlen(buffer);
                 usb_serial_write(buffer, size);
+#endif
             }
         }
 
