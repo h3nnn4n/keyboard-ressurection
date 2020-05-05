@@ -20,15 +20,6 @@ Why?
 -------
 Mechanical Keyboards are expensive and I like fixing stuff.
 
-TODO
--------
-- [x] Be able to commit from the keyboard
-- [ ] Support all modifiers
-- [ ] Support numbers
-- [ ] Support DVORAK
-- [ ] Add F1 ~ F12
-
-
 LICENSE
 -------
 Check [LICENSE](LICENSE) for the actual LICENSE.
