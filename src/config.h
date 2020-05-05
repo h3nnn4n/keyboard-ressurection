@@ -31,6 +31,9 @@
 
 #define N_ROWS 6
 #define N_COLUMNS 18
+#define N_MODIFIERS 7
+
+#define KEY_BUFFER_SIZE 6
 
 #define NOP -1
 

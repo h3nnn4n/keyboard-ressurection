@@ -66,7 +66,7 @@ void loop() {
 }
 
 int key_is_modifier(int key) {
-    for (size_t i = 0; i < 6; i++) {
+    for (size_t i = 0; i < N_MODIFIERS; i++) {
         if (key_modifiers[i] == key) {
             return 1;
         }
@@ -76,7 +76,7 @@ int key_is_modifier(int key) {
 }
 
 void reset_keys() {
-    for (size_t i = 0; i < 6; i++) {
+    for (size_t i = 0; i < KEY_BUFFER_SIZE; i++) {
         keyboard_keys[i] = 0;
     }
 
