@@ -48,6 +48,10 @@ void loop() {
         }
 
         digitalWrite(column_pins[i], LOW);
+
+        if (i + 1 < n_columns) {
+          delay(COLUMN_POOLING_DELAY);
+        }
     }
 
     if (active_keys > 0) {

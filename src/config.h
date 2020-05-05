@@ -34,7 +34,13 @@
 
 #define NOP -1
 
+// how much we wait before scanning the keyboard matrix
 #define POOLING_DELAY 10
+
+// how much we wait between turning a column off and turning the next one on
+// for scanning this being set as zero causes some ghosting (a key is pressed
+// and another one comes with it)
+#define COLUMN_POOLING_DELAY 1
 
 #define LED_PIN 13
 
