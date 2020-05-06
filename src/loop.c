@@ -21,12 +21,6 @@ void loop() {
 
     layer = shift_layer();
 
-    /*if (layer == 1) {*/
-        /*digitalWriteFast(LED_PIN, HIGH);*/
-    /*} else {*/
-        /*digitalWriteFast(LED_PIN, LOW);*/
-    /*}*/
-
     for (size_t i = 0; i < N_COLUMNS; i++) {
         digitalWrite(column_pins[i], HIGH);
         delay(COLUMN_POOLING_DELAY);
@@ -73,7 +67,7 @@ void loop() {
         digitalWriteFast(LED_PIN, LOW);
     }
 
-    /*usb_keymedia_send();*/
+    usb_keymedia_send();
     usb_keyboard_send();
 
     delay(POOLING_DELAY);
