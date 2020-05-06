@@ -28,6 +28,7 @@
  * SOFTWARE.
  */
 
+#include "usb_desc.h"
 #include "usb_dev.h"
 #include "usb_keyboard.h"
 #include "core_pins.h" // for yield()

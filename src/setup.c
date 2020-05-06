@@ -7,12 +7,12 @@ void setup() {
     pinMode(LED_PIN, OUTPUT);
 
     // Column scan pins
-    for (size_t i = 0; i < n_columns; i++) {
+    for (size_t i = 0; i < N_COLUMNS; i++) {
         pinMode(column_pins[i], OUTPUT);
     }
 
     // Row scan pins
-    for (size_t i = 0; i < n_rows; i++) {
+    for (size_t i = 0; i < N_ROWS; i++) {
         pinMode(row_pins[i], INPUT_PULLDOWN);
     }
 

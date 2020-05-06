@@ -32,10 +32,15 @@
 #define N_ROWS 6
 #define N_COLUMNS 18
 #define N_MODIFIERS 7
+#define N_MEDIA 7
 
 #define KEY_BUFFER_SIZE 6
+#define N_MEDIA_BUFFER_SIZE 4
 
 #define NOP -1
+
+// Fake key used as layer switching key
+#define KEY_NINJA -2
 
 // how much we wait before scanning the keyboard matrix
 #define POOLING_DELAY 10
@@ -52,6 +57,8 @@ extern const int row_pins[];
 extern const int n_columns;
 extern const int n_rows;
 extern const int key_modifiers[];
+extern const int key_media[];
 extern const int key_map[N_ROWS][N_COLUMNS];
+extern const int key_layer_2[N_ROWS][N_COLUMNS];
 
 #endif // __CONFIG_H
